@@ -1,0 +1,55 @@
+<h1>Search Form</h1>
+<!-- <form>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Title" id="title">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Last name">
+        </div>
+    </div>
+</form> -->
+
+<form [formGroup]="form">
+    <div class="row">
+        <label for="title">Title ({{genre}})</label>
+        <input type="text" class="form-control" placeholder="Title" id="title" formControlName="q">
+    </div>
+
+    
+    <!-- <div class="row">
+        <label for="genre">Genre</label>
+    </div>
+    <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio1">Anime</label>
+    </div>
+    <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio2">Manga</label>
+    </div> -->
+    
+
+    <div class="btn-group btn-block" role="group">
+        <button type="button" class="btn btn-primary" (click)="setGenre('anime')">Anime</button>
+        <button type="button" class="btn btn-warning" (click)="setGenre('manga')">Manga</button>
+        
+    </div>
+
+    <div>
+        <button class="btn btn-dark" (click)="saveSearch()" [disabled]="form.invalid">Save</button>
+    </div>
+    
+    
+    <div>
+        <button class="btn btn-dark" (click)="performSearch()" [disabled]="form.invalid">Go</button>
+    </div>
+</form>
+
+<!-- <button [routerLink]="['/']">Back</button> -->
+<i class="fas fa-home" [routerLink]="['/search']">Home</i>
+
+
+ <!-- button saves to database, and navigate to result.
+Go button navigates to result -->
+
