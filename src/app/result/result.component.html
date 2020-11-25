@@ -5,6 +5,16 @@
         <h4><code>{{ q }}</code> / {{ genre }}</h4>
     </div>
 </div>
+<!-- {{ resultsDisplay }} -->
+
+<table>
+    <h5>Titles found:</h5>
+    <tr *ngFor="let r of resultsDisplay">
+        <td>
+            {{ r.title }}
+        </td>
+    </tr>
+</table>
 
 
 
@@ -12,6 +22,4 @@
 
 
 
-
-
-<i class="fas fa-home" [routerLink]="['/search']">Home</i>
+<i class="fas fa-home" [routerLink]="['/searchlist']">Home</i>

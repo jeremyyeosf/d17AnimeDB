@@ -4,6 +4,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http'
 import { AnimeDatabase, normaliseSearchText } from '../anime.database';
 import { Genre, SearchOption } from '../models'
+import { ResultService } from '../result.service';
 
 @Component({
   selector: 'app-search',
@@ -17,7 +18,7 @@ export class SearchComponent implements OnInit {
   result
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private fb: FormBuilder, 
-    private http: HttpClient, private animeDB: AnimeDatabase) { }
+    private http: HttpClient, private animeDB: AnimeDatabase, private resultService: ResultService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -41,6 +42,7 @@ export class SearchComponent implements OnInit {
     console.log('searchresults: ', this.result)
     
     const q = normaliseSearchText(this.form.get('q').value)
+    this.resultService.add(this.result.results)
     this.router.navigate(['search', this.genre, q])
   }
 
