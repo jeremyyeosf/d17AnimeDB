@@ -32,7 +32,7 @@ export class SearchComponent implements OnInit {
     console.log('genre: ', this.genre)
   }
 
-  
+
   async performSearch() {
     // http get query
     this.result = await this.http.get(`https://api.jikan.moe/v3/search/${this.genre}?q=${this.form.value.q}`)

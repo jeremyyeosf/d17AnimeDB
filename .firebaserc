@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "anime-8329a": {
+      "hosting": {
+        "animesearch": [
+          "anime-8329a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "anime-8329a"
+  }
+}

@@ -6,17 +6,28 @@
     </div>
 </div>
 <!-- {{ resultsDisplay }} -->
-
+<!-- 
 <table>
     <h5>Titles found:</h5>
     <tr *ngFor="let r of resultsDisplay">
         <td>
+            <img src="{{ r.image_url }}" alt="">
             {{ r.title }}
+            
         </td>
     </tr>
-</table>
+</table> -->
 
-
+<div class="card border-primary mb-3" style="max-width: 18rem;" *ngFor="let r of resultsDisplay; let i = index">
+    <img class="card-img-top " src="{{ r.image_url }}" alt="Card image cap">
+    <div class="card-body ">
+      <h5 class="card-title">{{ r.title }}</h5>
+      <p class="card-text">{{ r.synopsis }}</p>
+    </div>
+    <div *ngIf="canShare">
+        <button class="btn btn-primary" (click)="shareThis(i)">Share</button>
+    </div>
+</div>
 
 
 

@@ -37,7 +37,7 @@ const ROUTES: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES),
+    RouterModule.forRoot(ROUETS),
     LottieModule.forRoot({player: playerFactory}),
     FormsModule,
     ReactiveFormsModule,
